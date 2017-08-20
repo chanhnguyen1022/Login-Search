@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="userLoginForm" type="form.UserLoginForm" />
+    </form-beans>
+ 
+    <action-mappings>
+        <action name="userLoginForm" path="/3C"
+	type="action.UserLoginAction" scope="request" validate="false">
+			<forward name="failure" path="/index.jsp" />
+			<forward name="success" path="/Search.jsp" />
+        </action>
+    </action-mappings>
+ 
+    <message-resources parameter="com/jwt/struts/action/ApplicationResource" />
+ 
+</struts-config>
